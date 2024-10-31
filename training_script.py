@@ -20,25 +20,6 @@ def count_images(dataset_path):
     
     return total_images
 
-def install_requirements():
-    """Install required packages"""
-    requirements = [
-        'pyyaml',
-        'torch',
-        'torchvision',
-        'opencv-python',
-        'numpy',
-        'tqdm'
-    ]
-    
-    print("Checking and installing required packages...")
-    for package in requirements:
-        try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-        except subprocess.CalledProcessError as e:
-            print(f"Error installing {package}: {e}")
-            sys.exit(1)
-
 def check_m1_device():
     """Check and configure M1 device settings"""
     if torch.backends.mps.is_available():
@@ -180,22 +161,19 @@ def main():
         sys.exit(0)
     
     try:
-        # Step 1: Install requirements
-        install_requirements()
-        
-        # Step 2: Check M1 device
+        # Step 1: Check M1 device
         device = check_m1_device()
         
-        # Step 3: Setup environment and create yaml file
+        # Step 2: Setup environment and create yaml file
         setup_environment()
         
-        # Step 4: Split dataset
+        # Step 3: Split dataset
         split_dataset('dataset')
         
-        # Step 5: Setup YOLOv5
+        # Step 4: Setup YOLOv5
         setup_yolov5()
         
-        # Step 6: Train model
+        # Step 5: Train model
         train_model()
         
         print("\nTraining completed successfully!")

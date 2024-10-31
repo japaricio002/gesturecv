@@ -165,7 +165,6 @@ The training configuration is automatically generated in `data.yaml`:
 ## 🔄 Training Process
 
 1. **Preparation**:
-   - Install required packages
    - Set up YOLOv5
    - Split dataset
    - Generate configuration
@@ -182,14 +181,6 @@ The training configuration is automatically generated in `data.yaml`:
 - Automatic hardware detection and configuration
 - Optimized batch size selection
 
-## 📋 Requirements
-
-- Python 3.8+
-- OpenCV
-- MediaPipe
-- PyTorch
-- Additional requirements will be installed automatically
-
 ## training_script.py
 
 ### count_images(dataset_path)
@@ -202,16 +193,6 @@ Uses os.walk to traverse subdirectories and count files with valid image extensi
 Return Count:
 Returns total_images, the total count of images in the directory.
 Purpose: Ensures the dataset has a sufficient number of images for training.
-
-### install_requirements()
-Installs necessary packages for the script.
-
-Define Required Packages:
-requirements contains libraries needed for training (PyYAML, Torch, etc.).
-Install Each Package:
-Iterates over each package and installs it using subprocess.check_call.
-Exits if any installation fails.
-Purpose: Ensures all dependencies are installed for the training process.
 
 ### check_m1_device()
 Checks if the script is running on an Apple M1 device and configures it accordingly.
