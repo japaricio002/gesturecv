@@ -2,7 +2,7 @@
 
 ## Gesture Recognition and Control System
 
-This repository is a comprehensive system for gesture recognition and application control, built using Python, OpenCV, and YOLOv5. The system allows for real-time gesture detection and mapping of gestures to specific actions, such as controlling an on-screen object. It is ideal for exploring computer vision, machine learning, and interactive application development.
+This repository houses a gesture recognition application built using Python, OpenCV, and YOLOv5. The system allows for real-time gesture detection and mapping of gestures to specific actions, such as controlling an on-screen object. It houses the application itself and also the pipeline to train the model for the application.
 
 ---
 
